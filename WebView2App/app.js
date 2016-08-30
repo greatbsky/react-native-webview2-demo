@@ -58,7 +58,7 @@ export default class extends Component {
         return (
             <TouchableWithoutFeedback onPress={this.reload} style={{padding:9}}>
                 <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: Dimensions.get('window').height}}>
-                    <Text>网络不给力！点击重新加载...</Text>
+                    <Text>网络不给力！点击重新加载...sorry, reload please...</Text>
                 </View>
             </TouchableWithoutFeedback>
         );
@@ -98,7 +98,7 @@ export default class extends Component {
     }
 
     test() {
-        // this.webview.evalJs(`alert(0)`);
+        // this.web.evalJs(`alert(0)`);
         this.web.evalJs(`var t = document.title; returnEval('this.setText("' + t + '")')`);
     }
 
