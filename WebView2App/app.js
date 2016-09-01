@@ -98,7 +98,7 @@ export default class extends Component {
     }
 
     test() {
-        // this.web.evalJs(`alert(0)`);
+        // this.web.evalJs(`alert(returnEval)`);
         this.web.evalJs(`var t = document.title; returnEval('this.setText("' + t + '")')`);
     }
 
