@@ -119,6 +119,7 @@ export default class extends Component {
                     <Web
                       ref={(c) => {this.web = c}}
                       evalReturn={this.evalReturn}
+                    //  evalReturn={((r) => {eval(r)}).bind(this)}
                       source={{uri: 'http://www.baidu.com'}}
                       style={[styles.web, {minHeight: 300}]}
                       startInLoadingState={true}
