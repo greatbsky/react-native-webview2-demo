@@ -20,11 +20,14 @@ export default class extends Component {
 
 	constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            js: ''
+        };
         this.onLoad = this.onLoad.bind(this);
         this.onLoadStart = this.onLoadStart.bind(this);
         this.onLoadEnd = this.onLoadEnd.bind(this);
         this.onError = this.onError.bind(this);
+        this.onContentSizeChange = this.onContentSizeChange.bind(this);
         this.renderError = this.renderError.bind(this);
         this.renderLoading = this.renderLoading.bind(this);
         this.onNavigationStateChange = this.onNavigationStateChange.bind(this);
@@ -43,14 +46,19 @@ export default class extends Component {
     }
 
     onLoadEnd(e) {
-        // console.log('onLoadEnd');
-        // console.log(e);
+        console.log('onLoadEnd');
+        console.log(e);
     }
 
     onError(e) {
         // this.setState({
         //     errmsg: 'Loading error...'
         // });
+    }
+
+    onContentSizeChange(e) {
+        // console.log('onContentSizeChange');
+        // console.log(e);
     }
 
     renderError(errorDomain, errorCode, errorDesc) {
@@ -129,6 +137,8 @@ export default class extends Component {
                       renderError={this.renderError}
                       renderLoading={this.renderLoading}
                       onNavigationStateChange={this.onNavigationStateChange}
+                      onContentSizeChange={this.onContentSizeChange}
+                      injectedJavaScript={this.state.js}
                       />
                     <Text style={styles.txt}>
                         This is the WebView or Web component in React Native both for Android and iOS, support auto height & call js between component and html document, very useful & easily!
