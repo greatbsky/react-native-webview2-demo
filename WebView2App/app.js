@@ -12,7 +12,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 
-import Web from 'react-native-webview2';
+import Web from './react-native-webview2';
 import Button from './components/Button';
 import styles from './style/index.css';
 
