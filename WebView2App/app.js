@@ -37,17 +37,17 @@ export default class extends Component {
 
     onLoad(e) {
         // console.log('onLoad');
-        // console.log(e);
+        // console.log(e.nativeEvent);
     }
 
     onLoadStart(e) {
         // console.log('onLoadStart');
-        // console.log(e);
+        // console.log(e.nativeEvent);
     }
 
     onLoadEnd(e) {
-        console.log('onLoadEnd');
-        console.log(e);
+        // console.log('onLoadEnd');
+        // console.log(e.nativeEvent);
     }
 
     onError(e) {
@@ -58,7 +58,7 @@ export default class extends Component {
 
     onContentSizeChange(e) {
         // console.log('onContentSizeChange');
-        // console.log(e);
+        // console.log(e.nativeEvent);
     }
 
     renderError(errorDomain, errorCode, errorDesc) {
@@ -106,7 +106,6 @@ export default class extends Component {
     }
 
     test() {
-        // this.web.evalJs(`alert(returnEval)`);
         this.web.evalJs(`var t = document.title; returnEval('this.setText("' + t + '")')`);
     }
 
@@ -128,7 +127,7 @@ export default class extends Component {
                       ref={(c) => {this.web = c}}
                       evalReturn={this.evalReturn}
                     //  evalReturn={((r) => {eval(r)}).bind(this)}
-                      source={{uri: 'http://www.baidu.com'}}
+                      source={{uri: 'http://www.163.com'}}
                       style={[styles.web, {minHeight: 300}]}
                       startInLoadingState={true}
                       onLoad={this.onLoad}
